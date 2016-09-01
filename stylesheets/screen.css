@@ -1,0 +1,199 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 56, img/*.png */
+.img-sprite, .img-waning1, .img-warning2 {
+  background-image: url('../images/img-s5e42519da5.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.img-waning1 {
+  background-position: 0 0;
+}
+
+/* line 84, d:/Ruby23/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.img-warning2 {
+  background-position: 0 -48px;
+}
+
+/* line 9, ../sass/screen.scss */
+body {
+  font-size: 12px;
+  padding: 20px;
+}
+
+/* line 13, ../sass/screen.scss */
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: forestgreen;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: #fff;
+  border: 1px solid #eee;
+}
+
+/* line 23, ../sass/screen.scss */
+.g-dialog-container {
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+/* line 45, ../sass/screen.scss */
+.g-dialog-container .dialog-window {
+  padding: 1em;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  -moz-transition: all 0.3s cubic-bezier(0.32, 0.13, 0.2, 1.35);
+  -o-transition: all 0.3s cubic-bezier(0.32, 0.13, 0.2, 1.35);
+  -webkit-transition: all 0.3s cubic-bezier(0.32, 0.13, 0.2, 1.35);
+  transition: all 0.3s cubic-bezier(0.32, 0.13, 0.2, 1.35);
+}
+/* line 51, ../sass/screen.scss */
+.g-dialog-container .dialog-header {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+/* line 56, ../sass/screen.scss */
+.g-dialog-container .dialog-header.waiting {
+  background: url("../images/img/loading.gif") no-repeat 0 0;
+  background-size: 50px;
+}
+/* line 61, ../sass/screen.scss */
+.g-dialog-container .dialog-content {
+  padding: 1em 1em 0;
+  color: #fff;
+  text-align: center;
+  line-height: 180%;
+}
+/* line 67, ../sass/screen.scss */
+.g-dialog-container .dialog-footer {
+  padding: 1em 1em 0;
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 80, ../sass/screen.scss */
+.g-dialog-container .dialog-footer button {
+  -moz-appearance: normal;
+  -webkit-appearance: normal;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.8em 1.8em;
+  border: none;
+  color: #eee;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 .3em;
+  text-shadow: #666 1px 1px 0;
+}
+/* line 89, ../sass/screen.scss */
+.g-dialog-container .dialog-footer button.green {
+  background-color: rgba(2, 202, 200, 0.8);
+}
+/* line 92, ../sass/screen.scss */
+.g-dialog-container .dialog-footer button.red {
+  background-color: rgba(251, 23, 50, 0.8);
+}

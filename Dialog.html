@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dialog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--删除苹果默认工具栏 状态栏-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"><!--苹果工具栏颜色-->
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link rel="stylesheet" href="stylesheets/screen.css">
+</head>
+<body>
+<!--<div class="g-dialog-container">
+    <div class="dialog-window">
+        <div class="dialog-header waiting"></div>
+        <div class="dialog-content">你是否要清空购物车？</div>
+        <div class="dialog-footer">
+            <button>按钮1</button>
+            <button>按钮2</button>
+        </div>
+    </div>
+</div>-->
+
+<button id="btn1">没有传递任何参数(需手动关闭)</button>
+<button id="btn2">弹出一个不带任何按钮，且是警告的框，并且2秒后自动关闭</button>
+<button id="btn3">弹出一个有确认和取消的按钮的成功框，点击按钮直接关闭</button>
+<button id="btn4">弹出一个有确认按钮的警告框，点击按钮不关闭(手动关闭)</button>
+<button id="btn5">弹出一个多组合的按钮框，且按钮样式可定制</button>
+<button id="btn6">弹出一个确认和删除的框，点击确认弹出加载框2秒自动关闭，点击删除按钮把上一次框关闭</button>
+<button id="btn7">带动画效果</button>
+<button id="btn8">自动关闭加回调</button>
+<button id="btn9">点击遮罩层关闭</button>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    $('#btn1').tap(function(){
+        var d = $.dialog();
+    })
+    $('#btn2').tap(function(){
+        var d = $.dialog({
+            type:'img-warning2',
+            delay:2000,
+            message:'2庙后自动关闭'
+        });
+    })
+    $('#btn3').tap(function(){
+        var d = $.dialog({
+            type:'img-waning1',
+            message:'2庙后自动关闭',
+            buttons: [
+                {
+                    type: 'red',
+                    text: '去掉',
+                    callback: function () {
+                        alert(1);
+                        return false;
+                    }
+                },
+                {
+                    type: 'green',
+                    text: '好的',
+                    callback: function () {
+                        alert(2)
+                    }
+                }
+            ],
+        });
+    })
+    $('#btn6').tap(function(){
+        var d = $.dialog({
+            type:'img-waning1',
+            message:'2庙后自动关闭',
+            buttons: [
+                {
+                    type: 'red',
+                    text: '去掉',
+                    callback: function () {
+                        $.dialog({
+                            type:'waiting',
+                            delay:2000
+                        })
+                        return false;
+                    }
+                },
+                {
+                    type: 'green',
+                    text: '好的',
+                    callback: function () {
+                        $.dialog({
+                            type:'waiting',
+                            buttons :{
+                                type: 'red',
+                                text: '去掉',
+                                callback: function () {
+                                    d.close();
+                                    return false;
+                                }
+                            }
+                        });
+                        return false;
+                    }
+                }
+            ],
+        });
+    })
+    $('#btn7').tap(function(){
+        var d = $.dialog({
+            type:'img-waning1',
+            message:'动画效果',
+            buttons: [
+                {
+                    type: 'red',
+                    text: '去掉',
+                    callback: function () {
+                        alert(1);
+                        return false;
+                    }
+                },
+                {
+                    type: 'green',
+                    text: '好的',
+                    callback: function () {
+                        alert(2)
+                    }
+                }
+            ],
+            effect :false
+        });
+    });
+    $('#btn8').tap(function(){
+        var d = $.dialog({
+            type:'img-warning2',
+            delay:2000,
+            message:'2庙后自动关闭',
+            delayCallback : function(){
+                alert(123)
+            }
+        });
+    });
+    $('#btn8').tap(function(){
+        var d = $.dialog({
+            type:'img-warning2',
+            message:'2s后自动关闭',
+            buttons: [
+                {
+                    type: 'red',
+                    text: '去掉'
+                },
+                {
+                    type: 'green',
+                    text: '好的'
+                }
+            ],
+            maskClose : true
+        });
+    })
+   /* var d = $.dialog({
+        //按钮组
+        buttons: [
+            {
+                type: 'red',
+                text: '去掉',
+                callback: function () {
+                    alert(1);
+                    return false;
+                }
+            },
+            {
+                type: 'green',
+                text: '好的',
+                callback: function () {
+                    alert(2)
+                }
+            }
+        ],
+        //类型
+        type:'waiting',
+        //延迟多久关闭
+        //delay:3000,
+        //提示信息
+        message : '你好好吗',
+        //遮罩透明度
+        maskOpacity:0.5
+    });*/
+</script>
+</body>
+</html>
